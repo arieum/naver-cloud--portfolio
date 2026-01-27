@@ -47,7 +47,7 @@ const NavBar: React.FC = () => {
               N
             </span>
             <span className={`text-xl font-bold ${isScrolled ? 'text-white' : 'text-gray-900'}`}>
-              ARIM.LOG
+              ARIM_LOG
             </span>
         </div>
 

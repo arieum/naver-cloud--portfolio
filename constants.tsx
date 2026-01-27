@@ -46,7 +46,9 @@ import reportBinbean from './assets/report_binbean.pdf';
 
 import imgSurfingGangwonPoster from './assets/img_surfing_poster.png'
 
-export const IMG_PROFILE = './assets/img_profile.jpeg';
+import imgProfile from './assets/img_profile.jpeg';
+
+export const IMG_PROFILE = imgProfile;
 
 export const PERSONAL_INFO = {
   name: "Arim Lee (이아림)",
