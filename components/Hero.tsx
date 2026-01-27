@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PERSONAL_INFO, IMG_PROFILE } from '../constants';
-import { Github, Mail, MapPin } from 'lucide-react';
+import { Cake, Github, Mail, MapPin, Phone } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -73,8 +73,10 @@ const Hero: React.FC = () => {
                 </div>
 
                 <div className="space-y-4">
+                   <InfoRow icon={<Cake size={20} className="text-[#03C75A]" />} label="Birth" value={PERSONAL_INFO.birth} />
                    <InfoRow icon={<MapPin size={20} className="text-[#03C75A]" />} label="Location" value={PERSONAL_INFO.address} />
                    <InfoRow icon={<Mail size={20} className="text-[#03C75A]" />} label="Email" value={PERSONAL_INFO.email} />
+                   <InfoRow icon={<Phone size={20} className="text-[#03C75A]" />} label="PHone" value={PERSONAL_INFO.phone} />
                 </div>
 
                 <div className="pt-8 border-t border-gray-100">
@@ -83,10 +85,6 @@ const Hero: React.FC = () => {
                     <div>
                       <p className="text-lg font-bold text-[#333]">Kangwon National University</p>
                       <p className="text-sm text-gray-500">Computer Engineering (2021.03 - 2026.02)</p>
-                    </div>
-                    <div>
-                      <p className="text-lg font-bold text-[#333]">Yubong Girls' High School</p>
-                      <p className="text-sm text-gray-500">Academic (2017 - 2020)</p>
                     </div>
                   </div>
                 </div>
