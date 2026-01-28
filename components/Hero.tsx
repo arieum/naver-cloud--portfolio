@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PERSONAL_INFO, IMG_PROFILE } from '../constants';
-import { Cake, Github, Mail, MapPin, Phone } from 'lucide-react';
+import { Cake, Github, Mail, MapPin, Phone, Lock } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -74,9 +74,9 @@ const Hero: React.FC = () => {
 
                 <div className="space-y-4">
                    <InfoRow icon={<Cake size={20} className="text-[#03C75A]" />} label="Birth" value={PERSONAL_INFO.birth} />
-                   <InfoRow icon={<MapPin size={20} className="text-[#03C75A]" />} label="Location" value={PERSONAL_INFO.address} />
-                   <InfoRow icon={<Mail size={20} className="text-[#03C75A]" />} label="Email" value={PERSONAL_INFO.email} />
-                   <InfoRow icon={<Phone size={20} className="text-[#03C75A]" />} label="PHone" value={PERSONAL_INFO.phone} />
+                   <PrivateInfoRow icon={<MapPin size={20} className="text-[#03C75A]" />} label="Location" />
+                   <PrivateInfoRow icon={<Mail size={20} className="text-[#03C75A]" />} label="Email" />
+                   <PrivateInfoRow icon={<Phone size={20} className="text-[#03C75A]" />} label="Phone" />
                 </div>
 
                 <div className="pt-8 border-t border-gray-100">
@@ -119,6 +119,7 @@ const Hero: React.FC = () => {
         .preserve-3d { transform-style: preserve-3d; }
         .backface-hidden { backface-visibility: hidden; }
         .rotate-y-180 { transform: rotateY(180deg); }
+        .pixelated { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
       `}</style>
     </section>
   );
@@ -130,6 +131,30 @@ const InfoRow = ({ icon, label, value }: { icon: React.ReactNode, label: string,
     <div className="min-w-0">
       <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{label}</p>
       <p className="text-base text-[#333] font-semibold truncate">{value}</p>
+    </div>
+  </div>
+);
+
+const PrivateInfoRow = ({ icon, label }: { icon: React.ReactNode, label: string }) => (
+  <div className="flex items-center gap-4">
+    <div className="p-2.5 bg-[#F8F9FA] rounded-xl shadow-sm">{icon}</div>
+    <div className="min-w-0 flex-1">
+      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{label}</p>
+      <div className="relative inline-flex items-center gap-2 mt-0.5">
+        <div className="flex gap-0.5">
+          <div className="w-2 h-4 bg-gray-300 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-400 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-300 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-400 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-300 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-400 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-300 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-400 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-300 pixelated"></div>
+          <div className="w-2 h-4 bg-gray-400 pixelated"></div>
+        </div>
+        <Lock size={12} className="text-gray-400" />
+      </div>
     </div>
   </div>
 );
